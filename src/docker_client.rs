@@ -68,6 +68,7 @@ impl DockerClient {
         let absolute_path = path.canonicalize().expect("Failed to get current directory");
         let current_dir = absolute_path.to_str().expect("Failed to get current directory");
 
+        print!("absolution_path = {}, current_dir = {}", absolute_path, current_dir);
         command
             .arg("-v")
             .arg(format!("{}:{}", current_dir, current_dir))
